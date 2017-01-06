@@ -1,1 +1,3 @@
-.AppleDouble\n.DS_Store
+.AppleDouble
+node_modules
+.DS_Store
