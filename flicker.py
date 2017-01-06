@@ -15,7 +15,8 @@ def setup():
     GPIO.setup(LED, GPIO.OUT)
 
     # Start PWM on the LED pin at 200Hz with a
-    # 100% duty cycle. At lower frequencies the LED # would  icker even when we wanted it on solidly pwm = GPIO.PWM(LED, 200)
+    # 100% duty cycle. At lower frequencies the LED
+    # would flicker even when we wanted it on solidly pwm = GPIO.PWM(LED, 200)
     # Start at a brightness of 100%
     pwm.start(100)
 
@@ -24,12 +25,15 @@ def set_brightness(new_brightness):
     pwm.ChangeDutyCycle(new_brightness)
 
 def flicker():
-    # We want a random brightness between 0% and 100%. # Then then we’ll hold it for a random time
-    # between 0.01 and 0.1 seconds to get a nice  icker # effect. Play with these values to make the effect # suit your liking
+    # We want a random brightness between 0% and 100%.
+    # Then then we'll hold it for a random time
+    # between 0.01 and 0.1 seconds to get a nice flicker
+    # effect. Play with these values to make the effect
+    # suit your liking
     set_brightness(random.randrange(0, 100))
     time.sleep(random.randrange(1, 10) * 0.01)
 
-# The wrapper around the  icker function makes sure the
+# The wrapper around the flicker function makes sure the
 # GPIO hardware is cleaned up when the user presses CTRL-C
 def loop():
     try:
@@ -43,5 +47,5 @@ def loop():
 # setup the hardware
 setup()
 
-# start the  ickering
+# start the flickering
 loop()
