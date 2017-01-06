@@ -1,4 +1,5 @@
-import RPi.GPIO as GPIO import time
+import RPi.GPIO as GPIO
+import time
 import random
 
 # Set the PWM output we are using for the LED
